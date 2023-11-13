@@ -6,7 +6,6 @@ export const ImageGenerator = () => {
   const [image_url1, setImage_url1] = React.useState("/");
   const [image_url2, setImage_url2] = React.useState("/");
   const [image_url3, setImage_url3] = React.useState("/");
-  const [image_url4, setImage_url4] = React.useState("/");
   const [loading, setLoading] = React.useState(false);
   const inputRef = useRef(null);
 
@@ -39,7 +38,6 @@ export const ImageGenerator = () => {
         setImage_url1(data_array[0].url);
         setImage_url2(data_array[1].url);
         setImage_url3(data_array[2].url);
-        setImage_url4(data_array[3].url);
         setLoading(false);
       } else {
         const errorData = await response.json();
@@ -71,10 +69,6 @@ export const ImageGenerator = () => {
           />
           <img
             src={image_url3 === "/" ? default_image : image_url3}
-            alt="default_image"
-          />
-          <img
-            src={image_url4 === "/" ? default_image : image_url4}
             alt="default_image"
           />
         </div>

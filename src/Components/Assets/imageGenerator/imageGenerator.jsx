@@ -8,7 +8,8 @@ export const ImageGenerator = () => {
   const [image_url3, setImage_url3] = React.useState("/");
   const [loading, setLoading] = React.useState(false);
   const inputRef = useRef(null);
-
+  const Key = process.env.REACT_APP_API_KEY;
+  
   const generateImage = async () => {
     if (inputRef.current.value === "") {
       alert("Please enter your text");
@@ -23,7 +24,7 @@ export const ImageGenerator = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer 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`,
+            Authorization: `Bearer ${Key}`,
           },
           body: JSON.stringify({
             prompt: `A photo of a ${inputRef.current.value}`,

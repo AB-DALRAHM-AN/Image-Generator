@@ -23,7 +23,7 @@ export const ImageGenerator = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer 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`,
+            Authorization: `Bearer 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`,
           },
           body: JSON.stringify({
             prompt: `A photo of a ${inputRef.current.value}`,
